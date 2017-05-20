@@ -1,0 +1,9 @@
+{
+  "default": {
+    "username": "christine",
+    "password": "password",
+    "database": "todos",
+    "host": "localhost:3306",
+    "dialect": "mysql"
+  }
+}

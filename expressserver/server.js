@@ -42,12 +42,20 @@ app.get('/todos/:id', (req, res) => {
   });
 });
 
+// adds a new todo to todos table
 app.post('/todos', (req, res) => {
   Tasks.build({
     todo: req.body.todo,
     complete: req.body.complete,
   }).save(() => {
     res.send('todo saved');
+  });
+});
+
+// deletes a todo of specfied id in todos table
+app.delete('/todos/:id', (req, res) => {
+  Tasks.destroy({ where: {id: req.params.id}}).then((todos) => {
+    res.send('todo deleted');
   });
 });
 
